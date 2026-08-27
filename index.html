@@ -1,10 +1,15 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Baby Shower Aurora 🎀</title>
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Baby Shower Aurora</title>
+
 
     <style>
 
@@ -12,47 +17,34 @@
             box-sizing: border-box;
         }
 
+
         html,
         body {
             margin: 0;
             padding: 0;
+
             width: 100%;
             min-height: 100%;
-        }
 
-        body {
-            font-family: "Trebuchet MS", Arial, sans-serif;
-
-            /* AMARILLO PARA LAS PRIMERAS DOS PANTALLAS */
-            background: #fff8cf;
-
-            color: #5c5140;
+            font-family: Arial, sans-serif;
         }
 
 
         /* =====================================
-           CONTENEDOR
+           TODAS LAS PANTALLAS
         ===================================== */
 
-        .contenedor {
+        .pantalla {
+
             width: 100%;
             min-height: 100vh;
 
             display: flex;
+
             justify-content: center;
             align-items: center;
 
             padding: 20px;
-        }
-
-
-        .pantalla {
-            width: 100%;
-            max-width: 500px;
-
-            text-align: center;
-
-            animation: aparecer 0.7s ease;
         }
 
 
@@ -63,24 +55,38 @@
 
         /* =====================================
            PANTALLA 1
+           AMARILLA
         ===================================== */
+
+        #pantalla1 {
+
+            background-color: #FFF4B8;
+        }
+
 
         .tarjeta {
 
-            background: #fffdf5;
+            width: 100%;
+            max-width: 450px;
+
+            background-color: #FFFDF4;
 
             border-radius: 30px;
 
             padding: 40px 25px;
 
+            text-align: center;
+
             box-shadow:
-                0 10px 35px rgba(180, 150, 70, 0.20);
+                0 10px 30px rgba(150, 120, 40, 0.20);
         }
 
 
-        .corazon {
+        .icono {
+
             font-size: 60px;
-            margin-bottom: 5px;
+
+            margin-bottom: 10px;
         }
 
 
@@ -88,21 +94,21 @@
 
             font-family: Georgia, serif;
 
-            color: #d5aa27;
-
             font-size: 42px;
 
-            margin: 5px 0 15px;
+            color: #D5A927;
+
+            margin: 10px 0;
         }
 
 
-        .subtitulo {
+        .texto {
 
             font-size: 19px;
 
-            line-height: 1.5;
+            color: #756A45;
 
-            color: #817451;
+            line-height: 1.5;
         }
 
 
@@ -112,17 +118,9 @@
 
             font-size: 28px;
 
-            color: #806f3d;
+            color: #75643B;
 
-            margin: 25px 0 20px;
-        }
-
-
-        .etiqueta {
-
-            font-size: 18px;
-
-            margin-bottom: 8px;
+            margin-top: 25px;
         }
 
 
@@ -130,80 +128,78 @@
 
             width: 100%;
 
-            padding: 16px;
+            padding: 17px;
 
-            border: 2px solid #ead98b;
+            margin-top: 15px;
 
             border-radius: 15px;
+
+            border: 2px solid #E3CE70;
 
             font-size: 18px;
 
             text-align: center;
 
             outline: none;
-
-            color: #5c5140;
-
-            background: white;
-
-            margin: 15px 0 20px;
         }
 
 
         input:focus {
 
-            border-color: #d5aa27;
+            border-color: #C8A62D;
         }
 
 
-        .boton {
+        .boton-continuar {
 
             width: 100%;
+
+            margin-top: 20px;
+
+            padding: 17px;
 
             border: none;
 
             border-radius: 18px;
 
-            padding: 17px;
+            background-color: #E2C247;
 
-            font-size: 19px;
+            color: white;
+
+            font-size: 18px;
 
             font-weight: bold;
 
             cursor: pointer;
-
-            background: #e6c54f;
-
-            color: white;
-
-            box-shadow:
-                0 5px 15px rgba(190, 155, 40, 0.25);
-
-            transition: transform 0.2s;
         }
-
-
-        .boton:hover {
-
-            transform: scale(1.03);
-        }
-
 
 
         /* =====================================
            PANTALLA 2
+           AMARILLA
         ===================================== */
 
-        .prediccion {
+        #pantalla2 {
 
-            background: #fffdf5;
+            background-color: #FFF4B8;
+        }
+
+
+        .tarjeta-prediccion {
+
+            width: 100%;
+            max-width: 450px;
+
+            background-color: #FFFDF4;
 
             border-radius: 30px;
 
             padding: 40px 25px;
 
+            text-align: center;
+
             box-shadow:
-                0 10px 35px rgba(180, 150, 70, 0.20);
+                0 10px 30px rgba(150, 120, 40, 0.20);
         }
 
 
@@ -215,19 +211,25 @@
         }
 
 
-        .prediccion h2 {
+        .saludo {
 
-            color: #806f3d;
+            font-family: Georgia, serif;
 
-            font-size: 28px;
+            font-size: 27px;
+
+            color: #75643B;
         }
 
 
-        .prediccion p {
+        .pregunta2 {
 
-            font-size: 19px;
+            font-family: Georgia, serif;
 
-            color: #817451;
+            font-size: 28px;
+
+            color: #75643B;
+
+            margin-top: 25px;
         }
 
 
@@ -245,11 +247,11 @@
 
             flex: 1;
 
+            padding: 25px 10px;
+
             border: none;
 
-            border-radius: 22px;
-
-            padding: 25px 10px;
+            border-radius: 20px;
 
             font-size: 19px;
 
@@ -257,41 +259,29 @@
 
             cursor: pointer;
 
-            transition: all 0.2s ease;
+            transition: transform 0.2s;
         }
 
 
         .opcion:hover {
 
-            transform: translateY(-5px);
-        }
-
-
-        .opcion:active {
-
-            transform: scale(0.96);
+            transform: scale(1.05);
         }
 
 
         .nino {
 
-            background: #c9e8ff;
+            background-color: #BFE5FF;
 
-            color: #40789d;
-
-            box-shadow:
-                0 5px 15px rgba(80, 150, 200, 0.18);
+            color: #39759B;
         }
 
 
         .nina {
 
-            background: #ffd3e1;
+            background-color: #FFD1E0;
 
-            color: #a65373;
-
-            box-shadow:
-                0 5px 15px rgba(220, 120, 160, 0.18);
+            color: #A74F70;
         }
 
 
@@ -300,26 +290,30 @@
            ROSA + INVITACIÓN
         ===================================== */
 
-        #pantallaResultado {
+        #pantalla3 {
 
-            max-width: 500px;
+            background-color: #F9DDE7;
+
+            padding: 10px;
         }
 
 
-        .revelacion {
+        .invitacion {
 
             position: relative;
 
             width: 100%;
 
-            min-height: 90vh;
+            max-width: 500px;
 
-            border-radius: 25px;
+            min-height: 95vh;
+
+            border-radius: 20px;
 
             overflow: hidden;
 
-            /* TU INVITACIÓN */
-            background-image: url("invitacion.jpeg");
+            background-image:
+                url("invitacion.jpeg");
 
             background-size: cover;
 
@@ -327,88 +321,65 @@
 
             background-repeat: no-repeat;
 
-            box-shadow:
-                0 10px 40px rgba(180, 100, 130, 0.30);
-
             display: flex;
 
-            justify-content: flex-end;
+            align-items: flex-end;
 
-            align-items: center;
+            justify-content: center;
 
-            flex-direction: column;
-
-            padding: 20px 15px;
+            padding: 15px;
         }
 
 
-        /*
-           MENSAJE SOBRE LA INVITACIÓN
-        */
-
-        .capa {
+        .mensaje {
 
             width: 100%;
 
-            background:
-                rgba(255, 255, 255, 0.93);
+            background-color:
+                rgba(255,255,255,0.94);
 
-            backdrop-filter: blur(4px);
+            border-radius: 20px;
 
-            border-radius: 22px;
+            padding: 18px;
 
-            padding: 18px 12px;
+            text-align: center;
 
             box-shadow:
-                0 5px 20px rgba(100, 50, 70, 0.18);
-
-            animation: revelar 1s ease;
+                0 5px 20px rgba(100,50,70,0.20);
         }
 
 
         .gracias {
 
-            margin: 0 0 5px;
+            margin: 0;
 
             font-size: 20px;
 
-            color: #80566b;
+            color: #80566B;
         }
 
 
-        .tu-prediccion {
+        .prediccion {
+
+            margin: 8px 0;
+
+            font-size: 17px;
+
+            color: #987D8B;
+        }
+
+
+        .sorpresa {
 
             margin: 5px 0;
 
-            font-size: 16px;
-
-            color: #987d8b;
-        }
-
-
-        .prediccion-resultado {
-
             font-family: Georgia, serif;
-
-            font-size: 28px;
-
-            margin: 5px 0 12px;
-
-            color: #d77f9e;
-        }
-
-
-        .gran-sorpresa {
-
-            margin-top: 8px;
 
             font-size: 38px;
 
-            font-family: Georgia, serif;
-
             font-weight: bold;
 
-            color: #e65f8c;
+            color: #E65D8B;
 
             animation: latido 1.2s infinite;
         }
@@ -416,73 +387,26 @@
 
         .decoracion {
 
-            font-size: 24px;
+            font-size: 25px;
 
-            margin: 5px 0;
+            margin: 5px;
         }
-
 
 
         /* =====================================
            ANIMACIONES
         ===================================== */
 
-        @keyframes aparecer {
-
-            from {
-
-                opacity: 0;
-
-                transform:
-                    translateY(25px);
-            }
-
-            to {
-
-                opacity: 1;
-
-                transform:
-                    translateY(0);
-            }
-        }
-
-
-        @keyframes revelar {
-
-            from {
-
-                opacity: 0;
-
-                transform:
-                    scale(0.8);
-            }
-
-            to {
-
-                opacity: 1;
-
-                transform:
-                    scale(1);
-            }
-        }
-
-
         @keyframes latido {
 
-            0%,
-            100% {
-
-                transform:
-                    scale(1);
+            0%, 100% {
+                transform: scale(1);
             }
 
             50% {
-
-                transform:
-                    scale(1.08);
+                transform: scale(1.08);
             }
         }
-
 
 
         /* =====================================
@@ -491,138 +415,147 @@
 
         @media (max-width: 500px) {
 
-            .contenedor {
-
-                padding: 10px;
-            }
-
-
-            .tarjeta {
-
-                padding:
-                    35px 20px;
-            }
-
-
             .titulo {
-
                 font-size: 36px;
             }
 
-
             .pregunta {
-
-                font-size: 24px;
-            }
-
-
-            .bebe {
-
-                font-size: 60px;
-            }
-
-
-            .opcion {
-
-                font-size: 17px;
-
-                padding:
-                    23px 5px;
-            }
-
-
-            .revelacion {
-
-                min-height: 94vh;
-
-                border-radius: 20px;
-            }
-
-
-            .gran-sorpresa {
-
-                font-size: 31px;
-            }
-
-
-            .gracias {
-
-                font-size: 18px;
-            }
-
-
-            .prediccion-resultado {
-
                 font-size: 25px;
+            }
+
+            .pregunta2 {
+                font-size: 25px;
+            }
+
+            .invitacion {
+                min-height: 96vh;
+            }
+
+            .sorpresa {
+                font-size: 30px;
             }
 
         }
 
     </style>
+
 </head>
 
 
 <body>
 
 
-<div class="contenedor">
+<!-- =========================================
+     PANTALLA 1
+========================================= -->
+
+<div
+    id="pantalla1"
+    class="pantalla"
+>
+
+    <div class="tarjeta">
+
+        <div class="icono">
+            💛
+        </div>
+
+        <h1 class="titulo">
+            Baby Shower
+        </h1>
+
+        <p class="texto">
+            Tenemos una pregunta muy especial...
+        </p>
+
+        <h2 class="pregunta">
+            ¿Qué crees que es? 👶
+        </h2>
+
+        <p class="texto">
+            Primero dinos tu nombre:
+        </p>
+
+        <input
+            type="text"
+            id="nombre"
+            placeholder="Escribe tu nombre"
+            maxlength="50"
+        >
+
+        <button
+            type="button"
+            class="boton-continuar"
+            onclick="continuar()"
+        >
+            CONTINUAR ✨
+        </button>
+
+    </div>
+
+</div>
 
 
-    <!-- =========================================
-         PANTALLA 1
-         NOMBRE
-    ========================================== -->
 
-    <div
-        class="pantalla"
-        id="pantallaNombre"
-    >
+<!-- =========================================
+     PANTALLA 2
+========================================= -->
 
-        <div class="tarjeta">
+<div
+    id="pantalla2"
+    class="pantalla oculto"
+>
 
+    <div class="tarjeta-prediccion">
 
-            <div class="corazon">
-                💛
-            </div>
+        <div class="bebe">
+            👶
+        </div>
 
+        <h2
+            id="saludo"
+            class="saludo"
+        >
+        </h2>
 
-            <h1 class="titulo">
-                Baby Shower
-            </h1>
+        <p class="texto">
+            Ahora sí...
+        </p>
 
-
-            <p class="subtitulo">
-                Tenemos una pregunta muy especial...
-            </p>
-
-
-            <h2 class="pregunta">
-                ¿Qué crees que es? 👶
-            </h2>
+        <h2 class="pregunta2">
+            ¿Qué crees que es?
+        </h2>
 
 
-            <div class="etiqueta">
-
-                Primero dinos tu nombre:
-
-            </div>
-
-
-            <input
-                type="text"
-                id="nombre"
-                placeholder="Escribe tu nombre"
-                maxlength="50"
-                autocomplete="off"
-            >
+        <div class="opciones">
 
 
             <button
-                class="boton"
-                onclick="continuar()"
+                type="button"
+                class="opcion nino"
+                onclick="votar('Niño')"
             >
 
-                CONTINUAR ✨
+                💙
+
+                <br><br>
+
+                NIÑO
+
+            </button>
+
+
+            <button
+                type="button"
+                class="opcion nina"
+                onclick="votar('Niña')"
+            >
+
+                💗
+
+                <br><br>
+
+                NIÑA
 
             </button>
 
@@ -631,133 +564,57 @@
 
     </div>
 
+</div>
 
 
-    <!-- =========================================
-         PANTALLA 2
-         PREDICCIÓN
-    ========================================== -->
 
-    <div
-        class="pantalla oculto"
-        id="pantallaPrediccion"
-    >
+<!-- =========================================
+     PANTALLA 3
+========================================= -->
 
-        <div class="prediccion">
+<div
+    id="pantalla3"
+    class="pantalla oculto"
+>
 
 
-            <div class="bebe">
-                👶
+    <div class="invitacion">
+
+
+        <div class="mensaje">
+
+
+            <div class="decoracion">
+                ✨ 🎀 ✨
             </div>
 
 
-            <h2 id="saludo">
-            </h2>
-
-
-            <p>
-                Ahora sí...
+            <p
+                id="gracias"
+                class="gracias"
+            >
             </p>
 
 
-            <h2>
-                ¿Qué crees que es?
-            </h2>
+            <p class="prediccion">
+                Tu predicción quedó registrada 💗
+            </p>
 
 
-            <div class="opciones">
+            <div class="sorpresa">
+
+                ¡ES NIÑA! 🎀
+
+            </div>
 
 
-                <button
-                    class="opcion nino"
-                    onclick="votar('Niño')"
-                >
-
-                    💙
-                    <br>
-
-                    NIÑO
-
-                </button>
-
-
-                <button
-                    class="opcion nina"
-                    onclick="votar('Niña')"
-                >
-
-                    💗
-                    <br>
-
-                    NIÑA
-
-                </button>
-
-
+            <div class="decoracion">
+                💗 🌸 👶 🌸 💗
             </div>
 
 
         </div>
 
-    </div>
-
-
-
-    <!-- =========================================
-         PANTALLA 3
-         INVITACIÓN + REVELACIÓN
-    ========================================== -->
-
-    <div
-        class="pantalla oculto"
-        id="pantallaResultado"
-    >
-
-        <div class="revelacion">
-
-
-            <div class="capa">
-
-
-                <div class="decoracion">
-                    ✨ 🎀 ✨
-                </div>
-
-
-                <p
-                    class="gracias"
-                    id="gracias"
-                >
-                </p>
-
-
-                <p class="tu-prediccion">
-                    Tu predicción fue:
-                </p>
-
-
-                <div
-                    class="prediccion-resultado"
-                    id="prediccion"
-                >
-                </div>
-
-
-                <div class="gran-sorpresa">
-
-                    ¡ES NIÑA! 🎀
-
-                </div>
-
-
-                <div class="decoracion">
-                    💗 🌸 👶 🌸 💗
-                </div>
-
-
-            </div>
-
-        </div>
 
     </div>
 
@@ -770,9 +627,9 @@
 
 
     /*
-    =========================================
-       NOMBRE DEL INVITADO
-    =========================================
+    ==========================================
+       VARIABLE PARA EL NOMBRE
+    ==========================================
     */
 
     let nombreInvitado = "";
@@ -780,21 +637,20 @@
 
 
     /*
-    =========================================
-       PANTALLA 1 → PANTALLA 2
-    =========================================
+    ==========================================
+       BOTÓN CONTINUAR
+    ==========================================
     */
 
     function continuar() {
 
 
-        const campoNombre =
+        const campo =
             document.getElementById("nombre");
 
 
         nombreInvitado =
-            campoNombre.value.trim();
-
+            campo.value.trim();
 
 
         if (nombreInvitado === "") {
@@ -803,31 +659,38 @@
                 "Por favor escribe tu nombre 😊"
             );
 
-            campoNombre.focus();
+            campo.focus();
 
             return;
+
         }
 
 
+        /*
+        Mostrar saludo
+        */
 
-        document
-            .getElementById("saludo")
-            .innerText =
+        document.getElementById("saludo")
+            .textContent =
                 "¡Hola, " +
                 nombreInvitado +
                 "! 💛";
 
 
+        /*
+        Ocultar pantalla 1
+        */
 
-        document
-            .getElementById("pantallaNombre")
+        document.getElementById("pantalla1")
             .classList
             .add("oculto");
 
 
+        /*
+        Mostrar pantalla 2
+        */
 
-        document
-            .getElementById("pantallaPrediccion")
+        document.getElementById("pantalla2")
             .classList
             .remove("oculto");
 
@@ -836,9 +699,9 @@
 
 
     /*
-    =========================================
-       PANTALLA 2 → PANTALLA 3
-    =========================================
+    ==========================================
+       BOTONES NIÑO / NIÑA
+    ==========================================
     */
 
     function votar(prediccion) {
@@ -848,45 +711,27 @@
         Mostrar nombre
         */
 
-        document
-            .getElementById("gracias")
-            .innerText =
+        document.getElementById("gracias")
+            .textContent =
                 "¡Gracias, " +
                 nombreInvitado +
                 "! 🎉";
-
-
-
-        /*
-        Mostrar lo que predijo
-        */
-
-        document
-            .getElementById("prediccion")
-            .innerText =
-                prediccion === "Niña"
-                    ? "💗 NIÑA"
-                    : "💙 NIÑO";
-
 
 
         /*
         Ocultar pantalla 2
         */
 
-        document
-            .getElementById("pantallaPrediccion")
+        document.getElementById("pantalla2")
             .classList
             .add("oculto");
-
 
 
         /*
         Mostrar pantalla 3
         */
 
-        document
-            .getElementById("pantallaResultado")
+        document.getElementById("pantalla3")
             .classList
             .remove("oculto");
 
@@ -896,4 +741,5 @@
 
 
 </body>
+
 </html>
