@@ -7,283 +7,605 @@
     <title>Baby Shower Aurora 🎀</title>
 
     <style>
+
         * {
             box-sizing: border-box;
         }
 
+        html,
         body {
             margin: 0;
-            min-height: 100vh;
-            font-family: "Trebuchet MS", Arial, sans-serif;
-            background: #fff3f6;
-            color: #735766;
+            padding: 0;
+            width: 100%;
+            min-height: 100%;
         }
+
+        body {
+            font-family: "Trebuchet MS", Arial, sans-serif;
+
+            /* AMARILLO PARA LAS PRIMERAS DOS PANTALLAS */
+            background: #fff8cf;
+
+            color: #5c5140;
+        }
+
+
+        /* =====================================
+           CONTENEDOR
+        ===================================== */
 
         .contenedor {
             width: 100%;
             min-height: 100vh;
+
             display: flex;
             justify-content: center;
             align-items: center;
+
             padding: 20px;
         }
+
 
         .pantalla {
             width: 100%;
             max-width: 500px;
+
             text-align: center;
-            animation: aparecer 0.6s ease;
+
+            animation: aparecer 0.7s ease;
         }
+
 
         .oculto {
             display: none !important;
         }
 
-        /* ---------- PANTALLA 1 ---------- */
+
+        /* =====================================
+           PANTALLA 1
+        ===================================== */
 
         .tarjeta {
-            background: white;
+
+            background: #fffdf5;
+
             border-radius: 30px;
+
             padding: 40px 25px;
-            box-shadow: 0 10px 35px rgba(190, 130, 150, 0.2);
+
+            box-shadow:
+                0 10px 35px rgba(180, 150, 70, 0.20);
         }
+
 
         .corazon {
-            font-size: 55px;
+            font-size: 60px;
+            margin-bottom: 5px;
         }
 
-        h1 {
-            color: #d889a6;
+
+        .titulo {
+
             font-family: Georgia, serif;
+
+            color: #d5aa27;
+
             font-size: 42px;
-            margin: 10px 0;
+
+            margin: 5px 0 15px;
         }
 
-        h2 {
-            color: #9b687d;
-            font-size: 27px;
-        }
 
-        p {
-            font-size: 18px;
+        .subtitulo {
+
+            font-size: 19px;
+
             line-height: 1.5;
+
+            color: #817451;
         }
+
+
+        .pregunta {
+
+            font-family: Georgia, serif;
+
+            font-size: 28px;
+
+            color: #806f3d;
+
+            margin: 25px 0 20px;
+        }
+
+
+        .etiqueta {
+
+            font-size: 18px;
+
+            margin-bottom: 8px;
+        }
+
 
         input {
+
             width: 100%;
+
             padding: 16px;
-            border: 2px solid #efc6d4;
+
+            border: 2px solid #ead98b;
+
             border-radius: 15px;
+
             font-size: 18px;
+
             text-align: center;
+
             outline: none;
-            margin: 15px 0;
+
+            color: #5c5140;
+
+            background: white;
+
+            margin: 15px 0 20px;
         }
+
 
         input:focus {
-            border-color: #d889a6;
+
+            border-color: #d5aa27;
         }
+
 
         .boton {
+
             width: 100%;
+
             border: none;
+
             border-radius: 18px;
+
             padding: 17px;
-            font-size: 18px;
+
+            font-size: 19px;
+
             font-weight: bold;
+
             cursor: pointer;
-            background: #e9a7bc;
+
+            background: #e6c54f;
+
             color: white;
-            box-shadow: 0 5px 15px rgba(200, 120, 150, .25);
+
+            box-shadow:
+                0 5px 15px rgba(190, 155, 40, 0.25);
+
+            transition: transform 0.2s;
         }
+
 
         .boton:hover {
-            transform: scale(1.02);
+
+            transform: scale(1.03);
         }
 
-        /* ---------- PANTALLA 2 ---------- */
+
+
+        /* =====================================
+           PANTALLA 2
+        ===================================== */
 
         .prediccion {
-            background: white;
+
+            background: #fffdf5;
+
             border-radius: 30px;
+
             padding: 40px 25px;
-            box-shadow: 0 10px 35px rgba(190, 130, 150, 0.2);
+
+            box-shadow:
+                0 10px 35px rgba(180, 150, 70, 0.20);
         }
+
 
         .bebe {
-            font-size: 65px;
+
+            font-size: 70px;
+
+            margin-bottom: 10px;
         }
 
+
+        .prediccion h2 {
+
+            color: #806f3d;
+
+            font-size: 28px;
+        }
+
+
+        .prediccion p {
+
+            font-size: 19px;
+
+            color: #817451;
+        }
+
+
         .opciones {
+
             display: flex;
+
             gap: 15px;
+
             margin-top: 30px;
         }
 
+
         .opcion {
+
             flex: 1;
+
             border: none;
+
             border-radius: 22px;
+
             padding: 25px 10px;
+
             font-size: 19px;
+
             font-weight: bold;
+
             cursor: pointer;
-            transition: .2s;
+
+            transition: all 0.2s ease;
         }
 
+
         .opcion:hover {
+
             transform: translateY(-5px);
         }
 
-        .nino {
-            background: #c9e8ff;
-            color: #40789d;
+
+        .opcion:active {
+
+            transform: scale(0.96);
         }
+
+
+        .nino {
+
+            background: #c9e8ff;
+
+            color: #40789d;
+
+            box-shadow:
+                0 5px 15px rgba(80, 150, 200, 0.18);
+        }
+
 
         .nina {
+
             background: #ffd3e1;
+
             color: #a65373;
+
+            box-shadow:
+                0 5px 15px rgba(220, 120, 160, 0.18);
         }
 
-        /* ---------- PANTALLA 3 ---------- */
+
+        /* =====================================
+           PANTALLA 3
+           ROSA + INVITACIÓN
+        ===================================== */
+
+        #pantallaResultado {
+
+            max-width: 500px;
+        }
+
 
         .revelacion {
+
             position: relative;
+
             width: 100%;
-            min-height: 85vh;
+
+            min-height: 90vh;
+
             border-radius: 25px;
+
             overflow: hidden;
 
+            /* TU INVITACIÓN */
             background-image: url("invitacion.jpeg");
+
             background-size: cover;
+
             background-position: center;
+
             background-repeat: no-repeat;
 
-            box-shadow: 0 10px 40px rgba(180, 100, 130, .3);
+            box-shadow:
+                0 10px 40px rgba(180, 100, 130, 0.30);
 
             display: flex;
+
             justify-content: flex-end;
+
             align-items: center;
+
             flex-direction: column;
-            padding: 25px 15px;
+
+            padding: 20px 15px;
         }
+
+
+        /*
+           MENSAJE SOBRE LA INVITACIÓN
+        */
 
         .capa {
+
             width: 100%;
-            background: rgba(255, 255, 255, 0.90);
+
+            background:
+                rgba(255, 255, 255, 0.93);
+
             backdrop-filter: blur(4px);
+
             border-radius: 22px;
-            padding: 15px;
-            box-shadow: 0 5px 20px rgba(100, 50, 70, .15);
+
+            padding: 18px 12px;
+
+            box-shadow:
+                0 5px 20px rgba(100, 50, 70, 0.18);
+
+            animation: revelar 1s ease;
         }
+
 
         .gracias {
-            font-size: 19px;
+
             margin: 0 0 5px;
-            color: #80576b;
+
+            font-size: 20px;
+
+            color: #80566b;
         }
+
 
         .tu-prediccion {
-            margin: 0;
-            font-size: 15px;
-            color: #9c7b8a;
+
+            margin: 5px 0;
+
+            font-size: 16px;
+
+            color: #987d8b;
         }
 
-        .resultado {
+
+        .prediccion-resultado {
+
             font-family: Georgia, serif;
-            font-size: 34px;
-            margin: 5px 0;
-            color: #df7d9e;
+
+            font-size: 28px;
+
+            margin: 5px 0 12px;
+
+            color: #d77f9e;
         }
+
 
         .gran-sorpresa {
+
             margin-top: 8px;
+
             font-size: 38px;
+
             font-family: Georgia, serif;
+
+            font-weight: bold;
+
             color: #e65f8c;
+
             animation: latido 1.2s infinite;
         }
 
+
         .decoracion {
+
             font-size: 24px;
-            margin: 5px;
+
+            margin: 5px 0;
         }
 
+
+
+        /* =====================================
+           ANIMACIONES
+        ===================================== */
+
         @keyframes aparecer {
+
             from {
+
                 opacity: 0;
-                transform: translateY(20px);
+
+                transform:
+                    translateY(25px);
             }
 
             to {
+
                 opacity: 1;
-                transform: translateY(0);
+
+                transform:
+                    translateY(0);
             }
         }
 
+
+        @keyframes revelar {
+
+            from {
+
+                opacity: 0;
+
+                transform:
+                    scale(0.8);
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform:
+                    scale(1);
+            }
+        }
+
+
         @keyframes latido {
-            0%, 100% {
-                transform: scale(1);
+
+            0%,
+            100% {
+
+                transform:
+                    scale(1);
             }
 
             50% {
-                transform: scale(1.08);
+
+                transform:
+                    scale(1.08);
             }
         }
+
+
+
+        /* =====================================
+           CELULAR
+        ===================================== */
 
         @media (max-width: 500px) {
 
             .contenedor {
+
                 padding: 10px;
             }
 
-            .revelacion {
-                min-height: 92vh;
+
+            .tarjeta {
+
+                padding:
+                    35px 20px;
             }
 
-            h1 {
+
+            .titulo {
+
                 font-size: 36px;
             }
 
-            h2 {
+
+            .pregunta {
+
                 font-size: 24px;
             }
 
-            .opcion {
-                font-size: 17px;
-                padding: 22px 5px;
+
+            .bebe {
+
+                font-size: 60px;
             }
 
+
+            .opcion {
+
+                font-size: 17px;
+
+                padding:
+                    23px 5px;
+            }
+
+
+            .revelacion {
+
+                min-height: 94vh;
+
+                border-radius: 20px;
+            }
+
+
             .gran-sorpresa {
+
                 font-size: 31px;
             }
+
+
+            .gracias {
+
+                font-size: 18px;
+            }
+
+
+            .prediccion-resultado {
+
+                font-size: 25px;
+            }
+
         }
+
     </style>
 </head>
 
+
 <body>
+
 
 <div class="contenedor">
 
-    <!-- ==================== -->
-    <!-- PANTALLA 1 -->
-    <!-- ==================== -->
 
-    <div class="pantalla" id="pantallaNombre">
+    <!-- =========================================
+         PANTALLA 1
+         NOMBRE
+    ========================================== -->
+
+    <div
+        class="pantalla"
+        id="pantallaNombre"
+    >
 
         <div class="tarjeta">
 
-            <div class="corazon">💗</div>
 
-            <h1>Baby Shower</h1>
+            <div class="corazon">
+                💛
+            </div>
 
-            <p>
+
+            <h1 class="titulo">
+                Baby Shower
+            </h1>
+
+
+            <p class="subtitulo">
                 Tenemos una pregunta muy especial...
             </p>
 
-            <h3>             
-                Pero antes, dinos tu nombre:
-            </h3>
+
+            <h2 class="pregunta">
+                ¿Qué crees que es? 👶
+            </h2>
+
+
+            <div class="etiqueta">
+
+                Primero dinos tu nombre:
+
+            </div>
 
 
             <input
@@ -291,147 +613,287 @@
                 id="nombre"
                 placeholder="Escribe tu nombre"
                 maxlength="50"
+                autocomplete="off"
             >
 
-            <button class="boton" onclick="continuar()">
+
+            <button
+                class="boton"
+                onclick="continuar()"
+            >
+
                 CONTINUAR ✨
+
             </button>
+
 
         </div>
 
     </div>
 
 
-    <!-- ==================== -->
-    <!-- PANTALLA 2 -->
-    <!-- ==================== -->
 
-    <div class="pantalla oculto" id="pantallaPrediccion">
+    <!-- =========================================
+         PANTALLA 2
+         PREDICCIÓN
+    ========================================== -->
+
+    <div
+        class="pantalla oculto"
+        id="pantallaPrediccion"
+    >
 
         <div class="prediccion">
+
 
             <div class="bebe">
                 👶
             </div>
 
-            <h2 id="saludo"></h2>
+
+            <h2 id="saludo">
+            </h2>
+
 
             <p>
-                Ahora si...
+                Ahora sí...
             </p>
+
 
             <h2>
                 ¿Qué crees que es?
             </h2>
 
+
             <div class="opciones">
+
 
                 <button
                     class="opcion nino"
                     onclick="votar('Niño')"
                 >
-                    💙<br>
+
+                    💙
+                    <br>
+
                     NIÑO
+
                 </button>
+
 
                 <button
                     class="opcion nina"
                     onclick="votar('Niña')"
                 >
-                    💗<br>
+
+                    💗
+                    <br>
+
                     NIÑA
+
                 </button>
 
+
             </div>
+
 
         </div>
 
     </div>
 
 
-    <!-- ==================== -->
-    <!-- PANTALLA 3 -->
-    <!-- ==================== -->
 
-    <div class="pantalla oculto" id="pantallaResultado">
+    <!-- =========================================
+         PANTALLA 3
+         INVITACIÓN + REVELACIÓN
+    ========================================== -->
+
+    <div
+        class="pantalla oculto"
+        id="pantallaResultado"
+    >
 
         <div class="revelacion">
+
 
             <div class="capa">
 
 
-                <p class="gracias" id="gracias"></p>
+                <div class="decoracion">
+                    ✨ 🎀 ✨
+                </div>
+
+
+                <p
+                    class="gracias"
+                    id="gracias"
+                >
+                </p>
+
 
                 <p class="tu-prediccion">
                     Tu predicción fue:
                 </p>
 
-                
-                <div class="gran-sorpresa">
-                    ¡ES NIÑA! 🎀
+
+                <div
+                    class="prediccion-resultado"
+                    id="prediccion"
+                >
                 </div>
 
-                
+
+                <div class="gran-sorpresa">
+
+                    ¡ES NIÑA! 🎀
+
+                </div>
+
+
+                <div class="decoracion">
+                    💗 🌸 👶 🌸 💗
+                </div>
+
+
             </div>
 
         </div>
 
     </div>
 
+
 </div>
+
 
 
 <script>
 
+
+    /*
+    =========================================
+       NOMBRE DEL INVITADO
+    =========================================
+    */
+
     let nombreInvitado = "";
+
+
+
+    /*
+    =========================================
+       PANTALLA 1 → PANTALLA 2
+    =========================================
+    */
 
     function continuar() {
 
-        const campo = document.getElementById("nombre");
 
-        nombreInvitado = campo.value.trim();
+        const campoNombre =
+            document.getElementById("nombre");
+
+
+        nombreInvitado =
+            campoNombre.value.trim();
+
+
 
         if (nombreInvitado === "") {
 
-            alert("Por favor escribe tu nombre 😊");
+            alert(
+                "Por favor escribe tu nombre 😊"
+            );
+
+            campoNombre.focus();
 
             return;
         }
 
-        document.getElementById("saludo").innerText =
-            "¡Hola, " + nombreInvitado + "! 💗";
+
+
+        document
+            .getElementById("saludo")
+            .innerText =
+                "¡Hola, " +
+                nombreInvitado +
+                "! 💛";
+
+
 
         document
             .getElementById("pantallaNombre")
-            .classList.add("oculto");
+            .classList
+            .add("oculto");
+
+
 
         document
             .getElementById("pantallaPrediccion")
-            .classList.remove("oculto");
+            .classList
+            .remove("oculto");
+
     }
 
 
+
+    /*
+    =========================================
+       PANTALLA 2 → PANTALLA 3
+    =========================================
+    */
+
     function votar(prediccion) {
 
-        document.getElementById("gracias").innerText =
-            "¡Gracias, " + nombreInvitado + "! 🎉";
 
-        document.getElementById("resultado").innerText =
-            prediccion === "Niña"
-                ? "💗 NIÑA"
-                : "💙 NIÑO";
+        /*
+        Mostrar nombre
+        */
+
+        document
+            .getElementById("gracias")
+            .innerText =
+                "¡Gracias, " +
+                nombreInvitado +
+                "! 🎉";
+
+
+
+        /*
+        Mostrar lo que predijo
+        */
+
+        document
+            .getElementById("prediccion")
+            .innerText =
+                prediccion === "Niña"
+                    ? "💗 NIÑA"
+                    : "💙 NIÑO";
+
+
+
+        /*
+        Ocultar pantalla 2
+        */
 
         document
             .getElementById("pantallaPrediccion")
-            .classList.add("oculto");
+            .classList
+            .add("oculto");
+
+
+
+        /*
+        Mostrar pantalla 3
+        */
 
         document
             .getElementById("pantallaResultado")
-            .classList.remove("oculto");
+            .classList
+            .remove("oculto");
 
     }
 
 </script>
+
 
 </body>
 </html>
