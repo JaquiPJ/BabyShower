@@ -389,21 +389,29 @@
 
     /* VOTACIÓN */
     function votar(prediccion) {
+        
+        fetch("https://script.google.com/macros/s/AKfycbwbhDAcK2iYPUkz3zVZ3dSLWHND8CeD2U6zJdtVuXsF4lfS71G5Hv4vySVpMnEfk3mjmw/exec", {
+            method: "POST",
+            body: JSON.stringify({
+                nombre: nombreInvitado,
+                prediccion: prediccion})
+        });
+        
         if (prediccion === "Niño") 
         {
             document.getElementById("pantalla2").classList.add("oculto");
             /*Mostrar UPS*/
             document.getElementById("pantallaUps").classList.remove("oculto");
-            /*Esperar 4 segundos*/
-            setTimeout(mostrarInvitacion, 4000);
+            /*Esperar 3 segundos*/
+            setTimeout(mostrarInvitacion, 3000);
         }
         else 
         {
             document.getElementById("pantalla2").classList.add("oculto");
             /*Mostrar ACERTASTE*/
             document.getElementById("pantallaAcertaste").classList.remove("oculto");
-            /*Esperar 4 segundos*/
-            setTimeout(mostrarInvitacion, 4000);
+            /*Esperar 3 segundos*/
+            setTimeout(mostrarInvitacion, 3000);
         }
     }
 
