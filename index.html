@@ -4,321 +4,155 @@
 <head>
 
     <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
-    <title>Baby Shower Aurora</title>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baby Shower</title>
 
     <style>
-
-        * {
-            box-sizing: border-box;
-        }
-
-
+        * {box-sizing: border-box;}
         html,
         body {
             margin: 0;
             padding: 0;
-
             width: 100%;
             min-height: 100%;
-
             font-family: Arial, sans-serif;
         }
 
 
-        /* =====================================
-           TODAS LAS PANTALLAS
-        ===================================== */
-
+        /*  TODAS LAS PANTALLAS */      
         .pantalla {
-
             width: 100%;
             min-height: 100vh;
-
             display: flex;
-
             justify-content: center;
             align-items: center;
-
             padding: 20px;
         }
+        .oculto { display: none !important; }
 
-
-        .oculto {
-            display: none !important;
-        }
-
-
-        /* =====================================
-           PANTALLA 1
-           AMARILLA
-        ===================================== */
-
-        #pantalla1 {
-
-            background-color: #FFF4B8;
-        }
-
-
+        /*  PANTALLA 1  */
+        #pantalla1 { background-color: #FFF4B8; }        
         .tarjeta {
-
             width: 100%;
             max-width: 450px;
-
             background-color: #FFFDF4;
-
             border-radius: 30px;
-
             padding: 40px 25px;
-
             text-align: center;
-
-            box-shadow:
-                0 10px 30px rgba(150, 120, 40, 0.20);
+            box-shadow: 0 10px 30px rgba(150, 120, 40, 0.20);
         }
-
-
         .icono {
-
             font-size: 60px;
-
             margin-bottom: 10px;
         }
-
-
         .titulo {
-
             font-family: Georgia, serif;
-
             font-size: 42px;
-
             color: #D5A927;
-
             margin: 10px 0;
         }
-
-
         .texto {
-
             font-size: 19px;
-
             color: #756A45;
-
             line-height: 1.5;
         }
-
-
         .pregunta {
-
             font-family: Georgia, serif;
-
             font-size: 28px;
-
             color: #75643B;
-
             margin-top: 25px;
         }
-
-
         input {
-
             width: 100%;
-
             padding: 17px;
-
             margin-top: 15px;
-
             border-radius: 15px;
-
             border: 2px solid #E3CE70;
-
             font-size: 18px;
-
             text-align: center;
-
             outline: none;
         }
-
-
-        input:focus {
-
-            border-color: #C8A62D;
-        }
-
-
+        input:focus { border-color: #C8A62D;}
         .boton-continuar {
-
             width: 100%;
-
             margin-top: 20px;
-
             padding: 17px;
-
             border: none;
-
             border-radius: 18px;
-
             background-color: #E2C247;
-
             color: white;
-
             font-size: 18px;
-
             font-weight: bold;
-
             cursor: pointer;
         }
-
-
-        /* =====================================
-           PANTALLA 2
-           AMARILLA
-        ===================================== */
-
-        #pantalla2 {
-
-            background-color: #FFF4B8;
-        }
-
-
+        
+        /*  PANTALLA 2 */
+        #pantalla2 { background-color: #FFF4B8; }
         .tarjeta-prediccion {
-
             width: 100%;
             max-width: 450px;
-
             background-color: #FFFDF4;
-
             border-radius: 30px;
-
             padding: 40px 25px;
-
             text-align: center;
-
-            box-shadow:
-                0 10px 30px rgba(150, 120, 40, 0.20);
+            box-shadow: 0 10px 30px rgba(150, 120, 40, 0.20);
         }
-
-
-
         .saludo {
-
             font-family: Georgia, serif;
-
             font-size: 27px;
-
             color: #75643B;
         }
-
-
         .pregunta2 {
-
             font-family: Georgia, serif;
-
             font-size: 28px;
-
             color: #75643B;
-
             margin-top: 25px;
         }
-
-
         .opciones {
-
             display: flex;
-
             gap: 15px;
-
             margin-top: 30px;
         }
-
-
         .opcion {
-
             flex: 1;
-
             padding: 25px 10px;
-
             border: none;
-
             border-radius: 20px;
-
             font-size: 19px;
-
             font-weight: bold;
-
             cursor: pointer;
-
             transition: transform 0.2s;
         }
-
-
-        .opcion:hover {
-
-            transform: scale(1.05);
-        }
-
-
+        .opcion:hover {transform: scale(1.05); }
         .nino {
-
             background-color: #BFE5FF;
-
             color: #39759B;
         }
-
-
         .nina {
-
             background-color: #FFD1E0;
-
             color: #A74F70;
         }
-
-
-        /* =====================================
-           PANTALLA 3
-           ROSA + INVITACIÓN
-        ===================================== */
-
+        
+        /*  PANTALLA 3 */
         #pantalla3 {
-
             background-color: #F9DDE7;
-
             padding: 10px;
         }
-
-
         .invitacion {
-
             position: relative;
-
             width: 100%;
-
             max-width: 500px;
-
             min-height: 95vh;
-
             border-radius: 20px;
-
             overflow: hidden;
-
             background-image: url("invitacion.jpeg");
-
-            background-size: cover;
-
+            background-size: contain; /*Mostrar toda la imagen*/
             background-position: center;
-
             background-repeat: no-repeat;
-
+            background-color: #f9dde7;
             display: flex;
-
             align-items: flex-end;
-
             justify-content: center;
-
             padding: 15px;
         }
 
