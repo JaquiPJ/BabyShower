@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Baby Shower 💛</title>
+    <title>Baby Shower Aurora 🎀</title>
 
     <style>
         * {
@@ -15,116 +15,120 @@
             margin: 0;
             min-height: 100vh;
             font-family: "Trebuchet MS", Arial, sans-serif;
-            background: #fff8cf;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-            color: #5c5140;
+            background: #fff3f6;
+            color: #735766;
         }
 
         .contenedor {
             width: 100%;
-            max-width: 500px;
             min-height: 100vh;
-            padding: 30px 22px;
             display: flex;
             justify-content: center;
             align-items: center;
-            text-align: center;
-            position: relative;
+            padding: 20px;
         }
 
         .pantalla {
             width: 100%;
-            background: rgba(255, 255, 255, 0.92);
-            border-radius: 30px;
-            padding: 40px 25px;
-            box-shadow: 0 10px 35px rgba(180, 150, 70, 0.20);
-            animation: aparecer 0.8s ease;
+            max-width: 500px;
+            text-align: center;
+            animation: aparecer 0.6s ease;
         }
 
         .oculto {
-            display: none;
+            display: none !important;
         }
 
-        .emoji {
-            font-size: 65px;
-            margin-bottom: 10px;
+        /* ---------- PANTALLA 1 ---------- */
+
+        .tarjeta {
+            background: white;
+            border-radius: 30px;
+            padding: 40px 25px;
+            box-shadow: 0 10px 35px rgba(190, 130, 150, 0.2);
+        }
+
+        .corazon {
+            font-size: 55px;
         }
 
         h1 {
-            font-size: 38px;
-            margin: 5px 0 15px;
-            color: #d5aa27;
+            color: #d889a6;
+            font-family: Georgia, serif;
+            font-size: 42px;
+            margin: 10px 0;
         }
 
         h2 {
-            font-size: 28px;
-            margin: 10px 0 20px;
+            color: #9b687d;
+            font-size: 27px;
         }
 
         p {
-            font-size: 19px;
+            font-size: 18px;
             line-height: 1.5;
-        }
-
-        .subtitulo {
-            color: #8a7b5c;
         }
 
         input {
             width: 100%;
-            padding: 17px;
-            border: 2px solid #ead98b;
+            padding: 16px;
+            border: 2px solid #efc6d4;
             border-radius: 15px;
             font-size: 18px;
             text-align: center;
             outline: none;
-            margin: 15px 0 20px;
+            margin: 15px 0;
         }
 
         input:focus {
-            border-color: #d5aa27;
+            border-color: #d889a6;
         }
 
         .boton {
+            width: 100%;
             border: none;
             border-radius: 18px;
-            padding: 17px 25px;
-            font-size: 19px;
+            padding: 17px;
+            font-size: 18px;
             font-weight: bold;
             cursor: pointer;
-            width: 100%;
-            transition: transform 0.2s, box-shadow 0.2s;
-            margin-top: 10px;
+            background: #e9a7bc;
+            color: white;
+            box-shadow: 0 5px 15px rgba(200, 120, 150, .25);
         }
 
         .boton:hover {
-            transform: scale(1.03);
+            transform: scale(1.02);
         }
 
-        .continuar {
-            background: #f1cf55;
-            color: white;
-            box-shadow: 0 5px 15px rgba(210, 170, 40, 0.3);
+        /* ---------- PANTALLA 2 ---------- */
+
+        .prediccion {
+            background: white;
+            border-radius: 30px;
+            padding: 40px 25px;
+            box-shadow: 0 10px 35px rgba(190, 130, 150, 0.2);
+        }
+
+        .bebe {
+            font-size: 65px;
         }
 
         .opciones {
             display: flex;
             gap: 15px;
-            margin-top: 25px;
+            margin-top: 30px;
         }
 
         .opcion {
             flex: 1;
-            padding: 25px 10px;
             border: none;
-            border-radius: 20px;
-            font-size: 20px;
+            border-radius: 22px;
+            padding: 25px 10px;
+            font-size: 19px;
             font-weight: bold;
             cursor: pointer;
-            transition: transform 0.2s;
+            transition: .2s;
         }
 
         .opcion:hover {
@@ -132,38 +136,77 @@
         }
 
         .nino {
-            background: #bde3ff;
-            color: #39729a;
+            background: #c9e8ff;
+            color: #40789d;
         }
 
         .nina {
-            background: #ffd0df;
-            color: #a94e70;
+            background: #ffd3e1;
+            color: #a65373;
+        }
+
+        /* ---------- PANTALLA 3 ---------- */
+
+        .revelacion {
+            position: relative;
+            width: 100%;
+            min-height: 85vh;
+            border-radius: 25px;
+            overflow: hidden;
+
+            background-image: url("invitacion.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+
+            box-shadow: 0 10px 40px rgba(180, 100, 130, .3);
+
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            flex-direction: column;
+            padding: 25px 15px;
+        }
+
+        .capa {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.90);
+            backdrop-filter: blur(4px);
+            border-radius: 22px;
+            padding: 15px;
+            box-shadow: 0 5px 20px rgba(100, 50, 70, .15);
+        }
+
+        .gracias {
+            font-size: 19px;
+            margin: 0 0 5px;
+            color: #80576b;
+        }
+
+        .tu-prediccion {
+            margin: 0;
+            font-size: 15px;
+            color: #9c7b8a;
         }
 
         .resultado {
-            animation: zoom 0.8s ease;
+            font-family: Georgia, serif;
+            font-size: 34px;
+            margin: 5px 0;
+            color: #df7d9e;
         }
 
-        .resultado h1 {
-            font-size: 48px;
-            color: #e4b82f;
+        .gran-sorpresa {
+            margin-top: 8px;
+            font-size: 38px;
+            font-family: Georgia, serif;
+            color: #e65f8c;
+            animation: latido 1.2s infinite;
         }
 
-        .gran-nina {
-            color: #e85c8b !important;
-            font-size: 55px !important;
-        }
-
-        .gran-nino {
-            color: #4c9bd1 !important;
-            font-size: 55px !important;
-        }
-
-        .confeti {
-            font-size: 35px;
-            letter-spacing: 5px;
-            margin: 20px 0;
+        .decoracion {
+            font-size: 24px;
+            margin: 5px;
         }
 
         @keyframes aparecer {
@@ -178,25 +221,28 @@
             }
         }
 
-        @keyframes zoom {
-            0% {
-                opacity: 0;
-                transform: scale(0.5);
-            }
-
-            70% {
-                transform: scale(1.08);
-            }
-
-            100% {
-                opacity: 1;
+        @keyframes latido {
+            0%, 100% {
                 transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.08);
             }
         }
 
-        @media (max-width: 400px) {
+        @media (max-width: 500px) {
+
+            .contenedor {
+                padding: 10px;
+            }
+
+            .revelacion {
+                min-height: 92vh;
+            }
+
             h1 {
-                font-size: 32px;
+                font-size: 36px;
             }
 
             h2 {
@@ -205,6 +251,11 @@
 
             .opcion {
                 font-size: 17px;
+                padding: 22px 5px;
+            }
+
+            .gran-sorpresa {
+                font-size: 31px;
             }
         }
     </style>
@@ -214,59 +265,36 @@
 
 <div class="contenedor">
 
+    <!-- ==================== -->
     <!-- PANTALLA 1 -->
+    <!-- ==================== -->
+
     <div class="pantalla" id="pantallaNombre">
 
-        <div class="emoji">💛</div>
+        <div class="tarjeta">
 
-        <h1>Baby Shower</h1>
+            <div class="corazon">💗</div>
 
-        <p class="subtitulo">
-            Tenemos una pregunta muy importante...
-        </p>
+            <h1>Baby Shower</h1>
 
-        <h2>¿Qué crees que es? 👶</h2>
+            <p>
+                Tenemos una pregunta muy especial...
+            </p>
 
-        <p>
-            Primero dinos tu nombre
-        </p>
-
-        <input
-            type="text"
-            id="nombre"
-            placeholder="Escribe tu nombre"
-            maxlength="50"
-        >
-
-        <button class="boton continuar" onclick="continuar()">
-            CONTINUAR ✨
-        </button>
-
-    </div>
+            <h3>             
+                Pero antes, dinos tu nombre:
+            </h3>
 
 
-    <!-- PANTALLA 2 -->
-    <div class="pantalla oculto" id="pantallaPrediccion">
+            <input
+                type="text"
+                id="nombre"
+                placeholder="Escribe tu nombre"
+                maxlength="50"
+            >
 
-    
-        <h2 id="saludo"></h2>
-
-        <p>
-            Ahora sí...
-        </p>
-
-        <h2>¿Qué crees que es?</h2>
-
-        <div class="opciones">
-
-            <button class="opcion nino" onclick="votar('Niño')">
-                💙<br>
-                NIÑO
-            </button>
-
-            <button class="opcion nina" onclick="votar('Niña')">
-                💗<br>
-                NIÑA
+            <button class="boton" onclick="continuar()">
+                CONTINUAR ✨
             </button>
 
         </div>
@@ -274,15 +302,79 @@
     </div>
 
 
+    <!-- ==================== -->
+    <!-- PANTALLA 2 -->
+    <!-- ==================== -->
+
+    <div class="pantalla oculto" id="pantallaPrediccion">
+
+        <div class="prediccion">
+
+            <div class="bebe">
+                👶
+            </div>
+
+            <h2 id="saludo"></h2>
+
+            <p>
+                Ahora si...
+            </p>
+
+            <h2>
+                ¿Qué crees que es?
+            </h2>
+
+            <div class="opciones">
+
+                <button
+                    class="opcion nino"
+                    onclick="votar('Niño')"
+                >
+                    💙<br>
+                    NIÑO
+                </button>
+
+                <button
+                    class="opcion nina"
+                    onclick="votar('Niña')"
+                >
+                    💗<br>
+                    NIÑA
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ==================== -->
     <!-- PANTALLA 3 -->
-    <div class="pantalla oculto resultado" id="pantallaResultado">
+    <!-- ==================== -->
+
+    <div class="pantalla oculto" id="pantallaResultado">
+
+        <div class="revelacion">
+
+            <div class="capa">
 
 
-        <h1 class="gran-nina">
-            ¡ES NIÑA! 🌸  
-        </h1>
+                <p class="gracias" id="gracias"></p>
 
-        
+                <p class="tu-prediccion">
+                    Tu predicción fue:
+                </p>
+
+                
+                <div class="gran-sorpresa">
+                    ¡ES NIÑA! 🎀
+                </div>
+
+                
+            </div>
+
+        </div>
 
     </div>
 
@@ -300,17 +392,21 @@
         nombreInvitado = campo.value.trim();
 
         if (nombreInvitado === "") {
+
             alert("Por favor escribe tu nombre 😊");
+
             return;
         }
 
         document.getElementById("saludo").innerText =
-            "¡Hola, " + nombreInvitado + "! 💛";
+            "¡Hola, " + nombreInvitado + "! 💗";
 
-        document.getElementById("pantallaNombre")
+        document
+            .getElementById("pantallaNombre")
             .classList.add("oculto");
 
-        document.getElementById("pantallaPrediccion")
+        document
+            .getElementById("pantallaPrediccion")
             .classList.remove("oculto");
     }
 
@@ -320,20 +416,22 @@
         document.getElementById("gracias").innerText =
             "¡Gracias, " + nombreInvitado + "! 🎉";
 
-        document.getElementById("prediccion").innerText =
+        document.getElementById("resultado").innerText =
             prediccion === "Niña"
                 ? "💗 NIÑA"
                 : "💙 NIÑO";
 
-        document.getElementById("pantallaPrediccion")
+        document
+            .getElementById("pantallaPrediccion")
             .classList.add("oculto");
 
-        document.getElementById("pantallaResultado")
+        document
+            .getElementById("pantallaResultado")
             .classList.remove("oculto");
+
     }
 
 </script>
 
 </body>
 </html>
-
