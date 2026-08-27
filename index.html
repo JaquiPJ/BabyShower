@@ -390,162 +390,72 @@
      PANTALLA 3
 ========================================= -->
 
-<div
-    id="pantalla3"
-    class="pantalla oculto"
->
+<div id="pantalla3" class="pantalla oculto">
 
-
+<!--
     <div class="invitacion">
-
-
         <div class="mensaje">
-
-
-
-            <p
-                id="gracias"
-                class="gracias"
-            >
-            </p>
-
-
-
-
-            <div class="sorpresa">
-
-                ¡ES NIÑA! 🎀
-
-            </div>
-
-
-
+            <p id="gracias" class="gracias"></p>
+            <div class="sorpresa">  ¡ES NIÑA! 🎀 </div>
         </div>
+    </div>
+-->
+    <div class="invitacion">
+    <img src="invitacion.jpeg" class="imagen-invitacion">
 
 
+
+        <p id="gracias" class="gracias"></p>
+        <p class="prediccion"> Tu predicción quedó registrada 💗 </p>
+        <div class="sorpresa"> ¡ES NIÑA! 🎀 </div>
+
+       
     </div>
 
 
+
+
+    
 </div>
 
-
-
 <script>
-
-
-    /*
-    ==========================================
-       VARIABLE PARA EL NOMBRE
-    ==========================================
-    */
-
+   /* VARIABLE*/
     let nombreInvitado = "";
 
-
-
-    /*
-    ==========================================
-       BOTÓN CONTINUAR
-    ==========================================
-    */
-
+    /* BOTÓN CONTINUAR */
     function continuar() {
-
-
-        const campo =
-            document.getElementById("nombre");
-
-
-        nombreInvitado =
-            campo.value.trim();
-
-
+        const campo = document.getElementById("nombre");
+        nombreInvitado = campo.value.trim();
         if (nombreInvitado === "") {
-
-            alert(
-                "Por favor escribe tu nombre 😊"
-            );
-
+            alert("Por favor escribe tu nombre 😊");
             campo.focus();
-
             return;
-
         }
 
+        /* Saludo*/
+        document.getElementById("saludo").textContent = "¡Hola, " + nombreInvitado + "! 💛";
 
-        /*
-        Mostrar saludo
-        */
+        /* Ocultar pantalla 1 */
+        document.getElementById("pantalla1").classList.add("oculto");
 
-        document.getElementById("saludo")
-            .textContent =
-                "¡Hola, " +
-                nombreInvitado +
-                "! 💛";
-
-
-        /*
-        Ocultar pantalla 1
-        */
-
-        document.getElementById("pantalla1")
-            .classList
-            .add("oculto");
-
-
-        /*
-        Mostrar pantalla 2
-        */
-
-        document.getElementById("pantalla2")
-            .classList
-            .remove("oculto");
-
+        /* Mostrar pantalla 2 */
+        document.getElementById("pantalla2").classList.remove("oculto");
     }
 
-
-
-    /*
-    ==========================================
-       BOTONES NIÑO / NIÑA
-    ==========================================
-    */
-
+    /* BOTONES NIÑO / NIÑA */
     function votar(prediccion) {
+        
+        /* Mostrar nombre */
+        document.getElementById("gracias").textContent = "¡Gracias, " + nombreInvitado + "! 🎉";
 
+        /* Ocultar pantalla 2 */
+        document.getElementById("pantalla2").classList.add("oculto");
 
-        /*
-        Mostrar nombre
-        */
-
-        document.getElementById("gracias")
-            .textContent =
-                "¡Gracias, " +
-                nombreInvitado +
-                "! 🎉";
-
-
-        /*
-        Ocultar pantalla 2
-        */
-
-        document.getElementById("pantalla2")
-            .classList
-            .add("oculto");
-
-
-        /*
-        Mostrar pantalla 3
-        */
-
-        document.getElementById("pantalla3")
-            .classList
-            .remove("oculto");
-
+        /* Mostrar pantalla 3 */
+        document.getElementById("pantalla3").classList.remove("oculto");
     }
 
 </script>
-
 
 </body>
 
