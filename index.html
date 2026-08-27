@@ -2,20 +2,12 @@
 <html lang="es">
 
 <head>
-
     <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
-    <title>Baby Shower 🎀</title>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Baby Shower </title>
     <style>
-
-        * {
-            box-sizing: border-box;
-        }
-
+        * {box-sizing: border-box;}
         html,
         body {
             margin: 0;
@@ -25,395 +17,231 @@
             font-family: Arial, sans-serif;
         }
 
-
-        /* =====================================
-           PANTALLAS
-        ===================================== */
-
+        /*  PANTALLAS */
         .pantalla {
             width: 100%;
             min-height: 100vh;
-
             display: flex;
-
             justify-content: center;
             align-items: center;
-
             padding: 20px;
         }
+        .oculto {display: none !important;}
 
-        .oculto {
-            display: none !important;
-        }
-
-
-        /* =====================================
-           PANTALLA 1
-           AMARILLA
-        ===================================== */
-
-        #pantalla1 {
-            background-color: #FFF4B8;
-        }
-
+        /*  PANTALLA 1 */
+        #pantalla1 {background-color: #FFF4B8;}
         .tarjeta {
             width: 100%;
             max-width: 450px;
-
             background-color: #FFFDF4;
-
             border-radius: 30px;
-
             padding: 40px 25px;
-
             text-align: center;
-
-            box-shadow:
-                0 10px 30px rgba(150, 120, 40, 0.20);
+            box-shadow: 0 10px 30px rgba(150, 120, 40, 0.20);
         }
-
         .icono {
             font-size: 60px;
             margin-bottom: 10px;
         }
-
         .titulo {
             font-family: Georgia, serif;
-
             font-size: 42px;
-
             color: #D5A927;
-
             margin: 10px 0;
         }
-
         .texto {
             font-size: 19px;
-
             color: #756A45;
-
             line-height: 1.5;
         }
-
         .pregunta {
             font-family: Georgia, serif;
-
             font-size: 28px;
-
             color: #75643B;
-
             margin-top: 25px;
         }
-
         input {
             width: 100%;
-
             padding: 17px;
-
             margin-top: 15px;
-
             border-radius: 15px;
-
             border: 2px solid #E3CE70;
-
             font-size: 18px;
-
             text-align: center;
-
             outline: none;
-
             background: white;
         }
-
         input:focus {
             border-color: #C8A62D;
         }
-
         .boton-continuar {
             width: 100%;
-
             margin-top: 20px;
-
             padding: 17px;
-
             border: none;
-
             border-radius: 18px;
-
             background-color: #E2C247;
-
             color: white;
-
             font-size: 18px;
-
             font-weight: bold;
-
             cursor: pointer;
-
             transition: transform 0.2s;
         }
-
-        .boton-continuar:hover {
-            transform: scale(1.03);
-        }
+        .boton-continuar:hover { transform: scale(1.03);}
 
 
-        /* =====================================
-           PANTALLA 2
-           AMARILLA
-        ===================================== */
+        /*  PANTALLA 2 */
 
-        #pantalla2 {
-            background-color: #FFF4B8;
-        }
-
+        #pantalla2 { background-color: #FFF4B8;}
         .tarjeta-prediccion {
             width: 100%;
             max-width: 450px;
-
             background-color: #FFFDF4;
-
             border-radius: 30px;
-
             padding: 40px 25px;
-
             text-align: center;
-
-            box-shadow:
-                0 10px 30px rgba(150, 120, 40, 0.20);
+            box-shadow: 0 10px 30px rgba(150, 120, 40, 0.20);
         }
-
         .bebe {
             font-size: 70px;
             margin-bottom: 10px;
         }
-
         .saludo {
             font-family: Georgia, serif;
-
             font-size: 27px;
-
             color: #75643B;
         }
-
         .pregunta2 {
             font-family: Georgia, serif;
-
             font-size: 28px;
-
             color: #75643B;
-
             margin-top: 25px;
         }
-
         .opciones {
             display: flex;
-
             gap: 15px;
-
             margin-top: 30px;
         }
-
         .opcion {
             flex: 1;
-
             padding: 25px 10px;
-
             border: none;
-
             border-radius: 20px;
-
             font-size: 19px;
-
             font-weight: bold;
-
             cursor: pointer;
-
             transition: transform 0.2s;
         }
-
-        .opcion:hover {
-            transform: scale(1.05);
-        }
-
-        .opcion:active {
-            transform: scale(0.96);
-        }
-
+        .opcion:hover {transform: scale(1.05);}
+        .opcion:active {transform: scale(0.96);}
         .nino {
             background-color: #BFE5FF;
             color: #39759B;
         }
-
         .nina {
             background-color: #FFD1E0;
             color: #A74F70;
         }
 
-
-        /* =====================================
-           PANTALLA UPS
-           ROJO / ROSA PASTEL
-        ===================================== */
+        /* PANTALLA UPS */
 
         #pantallaUps {
             background-color: #F7B6B6;
-
             text-align: center;
         }
-
         .mensaje-ups {
             width: 100%;
-
             max-width: 430px;
-
             background-color: #FFF4F4;
-
             border-radius: 30px;
-
             padding: 40px 25px;
-
-            box-shadow:
-                0 10px 35px rgba(170, 80, 80, 0.25);
-
+            box-shadow: 0 10px 35px rgba(170, 80, 80, 0.25);
             animation: aparecer 0.6s ease;
         }
-
         .icono-ups {
             font-size: 65px;
-
             margin-bottom: 10px;
         }
-
         .titulo-ups {
             font-family: Georgia, serif;
-
             font-size: 42px;
-
             color: #D66F6F;
-
             margin: 10px 0 20px;
         }
-
         .texto-ups {
             font-size: 20px;
-
             line-height: 1.6;
-
             color: #8B5A5A;
-
             margin: 10px 0;
         }
 
         .sorpresa-ups {
             margin: 20px 0;
-
             font-family: Georgia, serif;
-
             font-size: 32px;
-
             font-weight: bold;
-
             color: #D65F78;
-
             animation: latido 1.2s infinite;
         }
-
         .espera {
             margin-top: 25px;
-
             font-size: 15px;
-
             color: #B07A7A;
         }
 
-
-        /* =====================================
-           PANTALLA 3
-           INVITACIÓN
-        ===================================== */
+        /* PANTALLA 3 */
 
         #pantalla3 {
             background-color: #F9DDE7;
-
             padding: 10px;
-
             align-items: flex-start;
         }
 
         .resultado-final {
             width: 100%;
-
             max-width: 500px;
-
             text-align: center;
-
             padding-top: 10px;
         }
 
-
-        /* =====================================
-           IMAGEN DE INVITACIÓN
-        ===================================== */
+        /*  IMAGEN DE INVITACIÓN */
 
         .imagen-invitacion {
             display: block;
-
             width: 100%;
-
             height: auto;
-
             max-width: 100%;
-
             object-fit: contain;
-
             border-radius: 20px;
-
-            box-shadow:
-                0 8px 25px rgba(150, 80, 110, 0.20);
+            box-shadow: 0 8px 25px rgba(150, 80, 110, 0.20);
         }
 
-
-        /* =====================================
-           MENSAJE DEBAJO DE LA INVITACIÓN
-        ===================================== */
+        /* MENSAJE DEBAJO DE LA INVITACIÓN */
 
         .mensaje-final {
             width: 100%;
-
             padding: 18px 5px 10px;
-
             text-align: center;
         }
-
         .gracias {
             margin: 0;
-
             color: #80566B;
-
             font-size: 17px;
-
             font-weight: bold;
-
             white-space: nowrap;
         }
 
-
-        /* =====================================
-           ANIMACIONES
-        ===================================== */
+        /* ANIMACIONES */
 
         @keyframes aparecer {
 
             from {
                 opacity: 0;
-
                 transform: translateY(25px);
             }
 
             to {
                 opacity: 1;
-
                 transform: translateY(0);
             }
         }
@@ -424,484 +252,138 @@
             100% {
                 transform: scale(1);
             }
-
             50% {
                 transform: scale(1.08);
             }
         }
 
 
-        /* =====================================
-           CELULAR
-        ===================================== */
+        /* CELULAR */
 
         @media (max-width: 500px) {
 
-            .pantalla {
-                padding: 10px;
-            }
-
-            .tarjeta {
-                padding: 35px 20px;
-            }
-
-            .titulo {
-                font-size: 36px;
-            }
-
-            .pregunta {
-                font-size: 25px;
-            }
-
-            .bebe {
-                font-size: 60px;
-            }
-
-            .pregunta2 {
-                font-size: 25px;
-            }
-
+            .pantalla {padding: 10px;}
+            .tarjeta {padding: 35px 20px;}
+            .titulo {font-size: 36px;}
+            .pregunta {font-size: 25px;}
+            .bebe {font-size: 60px;}
+            .pregunta2 {font-size: 25px;}
             .opcion {
                 font-size: 17px;
-
                 padding: 23px 5px;
             }
-
-            .mensaje-ups {
-                padding: 35px 20px;
-            }
-
-            .titulo-ups {
-                font-size: 36px;
-            }
-
-            .texto-ups {
-                font-size: 18px;
-            }
-
-            .sorpresa-ups {
-                font-size: 29px;
-            }
-
-            #pantalla3 {
-                padding: 10px 5px;
-            }
-
+            .mensaje-ups {padding: 35px 20px;}
+            .titulo-ups {font-size: 36px;}
+            .texto-ups {font-size: 18px;}
+            .sorpresa-ups {font-size: 29px;}
+            #pantalla3 {padding: 10px 5px;}
             .gracias {
                 font-size: 13px;
-
                 white-space: nowrap;
             }
-
         }
 
     </style>
-
 </head>
-
 
 <body>
 
 
-<!-- =========================================
-     PANTALLA 1
-     NOMBRE
-========================================= -->
-
-<div
-    id="pantalla1"
-    class="pantalla"
->
-
+<!-- PANTALLA 1 -->
+<div id="pantalla1" class="pantalla">
     <div class="tarjeta">
-
-        <div class="icono">
-            💛
-        </div>
-
-        <h1 class="titulo">
-            Baby Shower
-        </h1>
-
-        <p class="texto">
-            Tenemos una pregunta muy especial...
-        </p>
-
-        <h2 class="pregunta">
-            ¿Qué crees que es? 👶
-        </h2>
-
-        <p class="texto">
-            Primero dinos tu nombre:
-        </p>
-
-        <input
-            type="text"
-            id="nombre"
-            placeholder="Escribe tu nombre"
-            maxlength="50"
-            autocomplete="off"
-        >
-
-        <button
-            type="button"
-            class="boton-continuar"
-            onclick="continuar()"
-        >
-            CONTINUAR ✨
-        </button>
-
+        <div class="icono"> 💛 </div>
+        <h1 class="titulo"> Baby Shower </h1>
+        <p class="texto"> Tenemos una pregunta muy importante... </p>
+        <h3 class="pregunta"> Primero dinos tu nombre:</h3>
+        <input type="text" id="nombre" placeholder="Escribe tu nombre" maxlength="50" autocomplete="off">
+        <button type="button" class="boton-continuar" onclick="continuar()" > CONTINUAR ✨ </button>
     </div>
-
 </div>
 
-
-
-<!-- =========================================
-     PANTALLA 2
-     PREDICCIÓN
-========================================= -->
-
-<div
-    id="pantalla2"
-    class="pantalla oculto"
->
-
+<!-- PANTALLA 2 -->
+<div id="pantalla2" class="pantalla oculto">
     <div class="tarjeta-prediccion">
-
-        <div class="bebe">
-            👶
-        </div>
-
-        <h2
-            id="saludo"
-            class="saludo"
-        ></h2>
-
-        <p class="texto">
-            Ahora sí...
-        </p>
-
-        <h2 class="pregunta2">
-            ¿Qué crees que es?
-        </h2>
-
+        <h2 id="saludo" class="saludo"></h2>
+        <p class="texto">Ahora sí...</p>
+        <h2 class="pregunta2"> ¿Qué crees que es?</h2>
         <div class="opciones">
-
-
-            <!-- NIÑO -->
-
-            <button
-                type="button"
-                class="opcion nino"
-                onclick="votar('Niño')"
-            >
-
-                💙
-
-                <br><br>
-
-                NIÑO
-
-            </button>
-
-
-            <!-- NIÑA -->
-
-            <button
-                type="button"
-                class="opcion nina"
-                onclick="votar('Niña')"
-            >
-
-                💗
-
-                <br><br>
-
-                NIÑA
-
-            </button>
-
-
+            <button type="button" class="opcion nino" onclick="votar('Niño')"> 💙 <br><br> NIÑO </button>
+            <button type="button" class="opcion nina" onclick="votar('Niña')"> 💗 <br><br> NIÑA </button>
         </div>
-
     </div>
-
 </div>
 
-
-
-<!-- =========================================
-     PANTALLA UPS
-========================================= -->
-
-<div
-    id="pantallaUps"
-    class="pantalla oculto"
->
-
+<!-- PANTALLA UPS -->
+<div id="pantallaUps" class="pantalla oculto">
     <div class="mensaje-ups">
-
-        <div class="icono-ups">
-            😮
-        </div>
-
-        <h1 class="titulo-ups">
-            ¡UPS!
-        </h1>
-
-        <p class="texto-ups">
-            ¡Fallaste esta vez! 😅
-        </p>
-
-        <div class="sorpresa-ups">
-            🎀 ¡ES NIÑA! 🎀
-        </div>
-
-        <p class="espera">
-            La sorpresa está por llegar... ✨
-        </p>
-
+        <div class="icono-ups"> 😮 </div>
+        <h1 class="titulo-ups"> ¡UPS! </h1>
+        <p class="texto-ups"> ¡Fallaste esta vez! 😅 </p>
+        <div class="sorpresa-ups"> ¡ES NIÑA! 🎀 </div>
+        <p class="espera"> La sorpresa está por llegar... ✨ </p>
     </div>
-
 </div>
 
-
-
-<!-- =========================================
-     PANTALLA 3
-     INVITACIÓN
-========================================= -->
-
-<div
-    id="pantalla3"
-    class="pantalla oculto"
->
-
+<!-- PANTALLA 3 -->
+<div id="pantalla3" class="pantalla oculto">
     <div class="resultado-final">
-
-
-        <!-- IMAGEN -->
-
-        <img
-            src="invitacion.jpeg"
-            class="imagen-invitacion"
-            alt="Invitación Baby Shower"
-        >
-
-
+        <img src="invitacion.jpeg" class="imagen-invitacion" alt="Invitación Baby Shower">
         <!-- MENSAJE -->
-
         <div class="mensaje-final">
-
-            <p
-                id="gracias"
-                class="gracias"
-            ></p>
-
+            <p id="gracias" class="gracias"></p>
         </div>
-
-
     </div>
-
 </div>
-
-
 
 <script>
-
-
-    /* ======================================
-       NOMBRE DEL INVITADO
-    ====================================== */
-
     let nombreInvitado = "";
-
-
-
-    /* ======================================
-       PANTALLA 1 → PANTALLA 2
-    ====================================== */
-
+    
+    /*  PANTALLA 1 → PANTALLA 2 */
     function continuar() {
-
-        const campoNombre =
-            document.getElementById("nombre");
-
-        nombreInvitado =
-            campoNombre.value.trim();
-
-
+        const campoNombre = document.getElementById("nombre");
+        nombreInvitado = campoNombre.value.trim();
+        
         if (nombreInvitado === "") {
-
-            alert(
-                "Por favor escribe tu nombre 😊"
-            );
-
+            alert("Por favor escribe tu nombre 😊");
             campoNombre.focus();
-
             return;
         }
-
-
-        /*
-        Saludo
-        */
-
-        document
-            .getElementById("saludo")
-            .textContent =
-                "¡Hola, " +
-                nombreInvitado +
-                "! 💛";
-
-
-        /*
-        Ocultar pantalla 1
-        */
-
-        document
-            .getElementById("pantalla1")
-            .classList
-            .add("oculto");
-
-
-        /*
-        Mostrar pantalla 2
-        */
-
-        document
-            .getElementById("pantalla2")
-            .classList
-            .remove("oculto");
-
+        
+        /*Saludo*/
+        document.getElementById("saludo").textContent = "¡Hola, " + nombreInvitado + "! 💛";
+        /*Ocultar pantalla 1*/
+        document.getElementById("pantalla1").classList.add("oculto");
+        /*Mostrar pantalla 2*/
+        document.getElementById("pantalla2").classList.remove("oculto");
     }
 
-
-
-    /* ======================================
-       VOTACIÓN
-    ====================================== */
-
+    /* VOTACIÓN */
     function votar(prediccion) {
-
-
-        /*
-        =====================================
-        SI ELIGE NIÑO
-        =====================================
-        */
-
-        if (prediccion === "Niño") {
-
-
-            /*
-            Ocultar pantalla 2
-            */
-
-            document
-                .getElementById("pantalla2")
-                .classList
-                .add("oculto");
-
-
-            /*
-            Mostrar UPS
-            */
-
-            document
-                .getElementById("pantallaUps")
-                .classList
-                .remove("oculto");
-
-
-            /*
-            Esperar 8 segundos
-            */
-
-            setTimeout(
-                mostrarInvitacion,
-                8000
-            );
-
+        if (prediccion === "Niño") 
+        {
+            document.getElementById("pantalla2").classList.add("oculto");
+            /*Mostrar UPS*/
+            document.getElementById("pantallaUps").classList.remove("oculto");
+            /*Esperar 8 segundos*/
+            setTimeout(mostrarInvitacion,8000);
         }
-
-
-        /*
-        =====================================
-        SI ELIGE NIÑA
-        =====================================
-        */
-
-        else {
-
-            /*
-            Va directamente
-            a la invitación
-            */
-
-            mostrarInvitacion();
-
-        }
-
+        else { mostrarInvitacion(); }
     }
 
-
-
-    /* ======================================
-       MOSTRAR INVITACIÓN
-    ====================================== */
 
     function mostrarInvitacion() {
 
-
-        /*
-        Mensaje debajo
-        de la imagen
-        */
-
-        document
-            .getElementById("gracias")
-            .textContent =
-                "Tu predicción quedó registrada. Gracias, " +
-                nombreInvitado;
-
-
-        /*
-        Ocultar UPS
-        */
-
-        document
-            .getElementById("pantallaUps")
-            .classList
-            .add("oculto");
-
-
-        /*
-        Ocultar pantalla 2
-        */
-
-        document
-            .getElementById("pantalla2")
-            .classList
-            .add("oculto");
-
-
-        /*
-        Mostrar invitación
-        */
-
-        document
-            .getElementById("pantalla3")
-            .classList
-            .remove("oculto");
-
+        document.getElementById("gracias").textContent = "Tu predicción quedó registrada. Gracias, " + nombreInvitado;
+        /* Ocultar UPS */
+        document.getElementById("pantallaUps").classList.add("oculto");
+        /* Ocultar pantalla 2 */
+        document.getElementById("pantalla2").classList.add("oculto");
+        /* Mostrar invitación */
+        document.getElementById("pantalla3").classList.remove("oculto");
     }
 
-
 </script>
-
-
+    
 </body>
-
 </html>
