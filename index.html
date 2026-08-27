@@ -71,9 +71,7 @@
             outline: none;
             background: white;
         }
-        input:focus {
-            border-color: #C8A62D;
-        }
+        input:focus { border-color: #C8A62D; }
         .boton-continuar {
             width: 100%;
             margin-top: 20px;
@@ -89,9 +87,7 @@
         }
         .boton-continuar:hover { transform: scale(1.03);}
 
-
         /*  PANTALLA 2 */
-
         #pantalla2 { background-color: #FFF4B8;}
         .tarjeta-prediccion {
             width: 100%;
@@ -144,7 +140,6 @@
         }
 
         /* PANTALLA UPS */
-
         #pantallaUps {
             background-color: #F7B6B6;
             text-align: center;
@@ -152,7 +147,6 @@
         .mensaje-ups {
             width: 100%;
             max-width: 430px;
-            background-color: #FFF4F4;
             border-radius: 30px;
             padding: 40px 25px;
             box-shadow: 0 10px 35px rgba(170, 80, 80, 0.25);
@@ -165,16 +159,15 @@
         .titulo-ups {
             font-family: Georgia, serif;
             font-size: 42px;
-            color: #D66F6F;
+            color: #000000;
             margin: 10px 0 20px;
         }
         .texto-ups {
             font-size: 20px;
             line-height: 1.6;
-            color: #8B5A5A;
+            color: #000000;
             margin: 10px 0;
         }
-
         .sorpresa-ups {
             margin: 20px 0;
             font-family: Georgia, serif;
@@ -183,20 +176,50 @@
             color: #D65F78;
             animation: latido 1.2s infinite;
         }
-        .espera {
-            margin-top: 25px;
-            font-size: 15px;
-            color: #B07A7A;
+
+        /* PANTALLA ACERTASTE */
+        #pantallaAcertaste {
+            background-color: #FFD1E0;
+            text-align: center;
+        }
+        .mensaje-acertaste {
+            width: 100%;
+            max-width: 430px;
+            border-radius: 30px;
+            padding: 40px 25px;
+            box-shadow: 0 10px 35px rgba(170, 80, 110, 0.20);
+            animation: aparecer 0.6s ease;
+        }
+        .icono-acertaste {
+            font-size: 65px;
+            margin-bottom: 10px;
+        }
+        .titulo-acertaste {
+            font-family: Georgia, serif;
+            font-size: 40px;
+            color: #000000;
+            margin: 10px 0 20px;
+        }
+        .texto-acertaste {
+            font-size: 20px;
+            line-height: 1.6;
+            color: #000000;
+            margin: 10px 0;
+        }
+        .sorpresa-acertaste {
+            margin: 20px 0;
+            font-family: Georgia, serif;
+            font-size: 32px;
+            font-weight: bold;
+            color: #D65F78;
         }
 
         /* PANTALLA 3 */
-
         #pantalla3 {
             background-color: #F9DDE7;
             padding: 10px;
             align-items: flex-start;
         }
-
         .resultado-final {
             width: 100%;
             max-width: 500px;
@@ -205,7 +228,6 @@
         }
 
         /*  IMAGEN DE INVITACIÓN */
-
         .imagen-invitacion {
             display: block;
             width: 100%;
@@ -217,7 +239,6 @@
         }
 
         /* MENSAJE DEBAJO DE LA INVITACIÓN */
-
         .mensaje-final {
             width: 100%;
             padding: 18px 5px 10px;
@@ -232,14 +253,11 @@
         }
 
         /* ANIMACIONES */
-
         @keyframes aparecer {
-
             from {
                 opacity: 0;
                 transform: translateY(25px);
             }
-
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -247,7 +265,6 @@
         }
 
         @keyframes latido {
-
             0%,
             100% {
                 transform: scale(1);
@@ -257,11 +274,8 @@
             }
         }
 
-
         /* CELULAR */
-
         @media (max-width: 500px) {
-
             .pantalla {padding: 10px;}
             .tarjeta {padding: 35px 20px;}
             .titulo {font-size: 36px;}
@@ -276,6 +290,10 @@
             .titulo-ups {font-size: 36px;}
             .texto-ups {font-size: 18px;}
             .sorpresa-ups {font-size: 29px;}
+            .mensaje-acertaste {padding: 35px 20px;}
+            .titulo-acertaste {font-size: 36px;}
+            .texto-acertaste {font-size: 18px;}
+            .sorpresa-acertaste {font-size: 29px;}
             #pantalla3 {padding: 10px 5px;}
             .gracias {
                 font-size: 13px;
@@ -321,7 +339,16 @@
         <h1 class="titulo-ups"> ¡UPS! </h1>
         <p class="texto-ups"> ¡Fallaste esta vez! 😅 </p>
         <div class="sorpresa-ups"> ¡ES NIÑA! 🎀 </div>
-        <p class="espera"> La sorpresa está por llegar... ✨ </p>
+    </div>
+</div>
+
+<!-- PANTALLA ACERTASTE -->
+<div id="pantallaAcertaste" class="pantalla oculto">
+    <div class="mensaje-acertaste">
+        <div class="icono-acertaste"> 🎉 </div>
+        <h1 class="titulo-acertaste"> ¡ACERTASTE! </h1>
+        <p class="texto-acertaste"> ¡Qué buena predicción! 💗 </p>
+        <div class="sorpresa-acertaste"> ¡ES NIÑA! 🎀 </div>
     </div>
 </div>
 
@@ -365,18 +392,25 @@
             document.getElementById("pantalla2").classList.add("oculto");
             /*Mostrar UPS*/
             document.getElementById("pantallaUps").classList.remove("oculto");
-            /*Esperar 8 segundos*/
-            setTimeout(mostrarInvitacion,8000);
+            /*Esperar 4 segundos*/
+            setTimeout(mostrarInvitacion, 4000);
         }
-        else { mostrarInvitacion(); }
+        else 
+        {
+            document.getElementById("pantalla2").classList.add("oculto");
+            /*Mostrar ACERTASTE*/
+            document.getElementById("pantallaAcertaste").classList.remove("oculto");
+            /*Esperar 4 segundos*/
+            setTimeout(mostrarInvitacion, 4000);
+        }
     }
 
-
     function mostrarInvitacion() {
-
         document.getElementById("gracias").textContent = "Tu predicción quedó registrada. Gracias, " + nombreInvitado;
         /* Ocultar UPS */
         document.getElementById("pantallaUps").classList.add("oculto");
+        /* Ocultar ACERTASTE */
+        document.getElementById("pantallaAcertaste").classList.add("oculto");
         /* Ocultar pantalla 2 */
         document.getElementById("pantalla2").classList.add("oculto");
         /* Mostrar invitación */
