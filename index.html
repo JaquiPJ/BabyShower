@@ -139,6 +139,12 @@
             color: #A74F70;
         }
 
+        /* Corazones iguales*/
+        .corazon {font-size: 35px;}
+        .nino .corazon {color: #39759B;}
+        .nina .corazon {color: #D65F78;}
+
+        
         /* PANTALLA UPS */
         #pantallaUps {
             background-color: #A7D8F0; /*Fondo Azul*/
@@ -328,8 +334,8 @@
         <p class="texto">Ahora sí...</p>
         <h2 class="pregunta2"> ¿Qué crees que es?</h2>
         <div class="opciones">
-            <button type="button" class="opcion nino" onclick="votar('Niño')"> 💙 <br><br> NIÑO </button>
-            <button type="button" class="opcion nina" onclick="votar('Niña')"> 💗 <br><br> NIÑA </button>
+            <button type="button" class="opcion nino" onclick="votar('Niño')"> <span class="corazon">♥</span> <br><br> NIÑO </button>
+            <button type="button" class="opcion nina" onclick="votar('Niña')"> <span class="corazon">♥</span> <br><br> NIÑA </button>
         </div>
     </div>
 </div>
