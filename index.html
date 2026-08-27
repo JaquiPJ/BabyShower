@@ -8,7 +8,7 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
 
-    <title>Baby Shower Aurora 🎀</title>
+    <title>Baby Shower</title>
 
 
     <style>
@@ -642,7 +642,7 @@
             <button
                 type="button"
                 class="opcion nina"
-                onclick="votar('Niña')"
+                onclick="('Niña')"
             >
 
                 💗
@@ -703,11 +703,10 @@
             </p>
 
 
-            <div class="sorpresa">
-
-                ¡ES NIÑA! 🎀
-
-            </div>
+            <div
+        id="sorpresa"
+        class="sorpresa"
+    ></div>
 
 
         </div>
@@ -804,15 +803,40 @@
     function votar(prediccion) {
 
 
-        /*
-        Mensaje debajo de la invitación
-        */
+        const mensaje = document.getElementById("sorpresa");
 
-        document
-            .getElementById("gracias")
-            .textContent =
-                "Tu predicción quedó registrada. Gracias, " +
-                nombreInvitado;
+    /*
+    Si eligió NIÑO
+    */
+
+    if (prediccion === "Niño") {
+
+        mensaje.innerHTML =
+            "😄 ¡UPS! CASI...<br>¡ES NIÑA! 🎀";
+
+    }
+
+    /*
+    Si eligió NIÑA
+    */
+
+    else {
+
+        mensaje.innerHTML =
+            "🎀 ¡ES NIÑA! 🎀";
+
+    }
+
+
+    /*
+    Mensaje con el nombre
+    */
+
+    document
+        .getElementById("gracias")
+        .textContent =
+            "Tu predicción quedó registrada. Gracias, " +
+            nombreInvitado;
 
 
         /*
