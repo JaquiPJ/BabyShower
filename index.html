@@ -8,7 +8,7 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
 
-    <title>Baby Shower</title>
+    <title>Baby Shower Aurora 🎀</title>
 
 
     <style>
@@ -31,7 +31,7 @@
 
 
         /* =====================================
-           TODAS LAS PANTALLAS
+           PANTALLAS
         ===================================== */
 
         .pantalla {
@@ -51,6 +51,7 @@
         .oculto {
             display: none !important;
         }
+
 
 
         /* =====================================
@@ -146,12 +147,6 @@
         }
 
 
-        input:focus {
-
-            border-color: #C8A62D;
-        }
-
-
         .boton-continuar {
 
             width: 100%;
@@ -173,14 +168,6 @@
             font-weight: bold;
 
             cursor: pointer;
-
-            transition: transform 0.2s;
-        }
-
-
-        .boton-continuar:hover {
-
-            transform: scale(1.03);
         }
 
 
@@ -304,8 +291,83 @@
 
 
         /* =====================================
+           PANTALLA UPS
+           ROJO / ROSA PASTEL
+        ===================================== */
+
+        #pantallaUps {
+
+            background-color: #F7B6B6;
+
+            text-align: center;
+        }
+
+
+        .mensaje-ups {
+
+            width: 100%;
+
+            max-width: 430px;
+
+            background-color: #FFF4F4;
+
+            border-radius: 30px;
+
+            padding: 40px 25px;
+
+            box-shadow:
+                0 10px 35px rgba(170, 80, 80, 0.25);
+
+            animation: aparecer 0.6s ease;
+        }
+
+
+        .icono-ups {
+
+            font-size: 65px;
+
+            margin-bottom: 10px;
+        }
+
+
+        .titulo-ups {
+
+            font-family: Georgia, serif;
+
+            font-size: 42px;
+
+            color: #D66F6F;
+
+            margin: 10px 0 20px;
+        }
+
+
+        .texto-ups {
+
+            font-size: 20px;
+
+            line-height: 1.6;
+
+            color: #8B5A5A;
+
+            margin: 10px 0;
+        }
+
+
+        .espera {
+
+            margin-top: 25px;
+
+            font-size: 15px;
+
+            color: #B07A7A;
+        }
+
+
+
+        /* =====================================
            PANTALLA 3
-           ROSA + INVITACIÓN
+           INVITACIÓN
         ===================================== */
 
         #pantalla3 {
@@ -330,10 +392,6 @@
         }
 
 
-        /* =====================================
-           IMAGEN DE LA INVITACIÓN
-        ===================================== */
-
         .imagen-invitacion {
 
             display: block;
@@ -352,10 +410,6 @@
                 0 8px 25px rgba(150, 80, 110, 0.20);
         }
 
-
-        /* =====================================
-           MENSAJE DEBAJO DE LA IMAGEN
-        ===================================== */
 
         .mensaje-final {
 
@@ -377,9 +431,6 @@
 
             font-weight: bold;
 
-            /*
-              Evita que se divida en varias líneas
-            */
             white-space: nowrap;
         }
 
@@ -402,8 +453,26 @@
 
 
         /* =====================================
-           ANIMACIÓN
+           ANIMACIONES
         ===================================== */
+
+        @keyframes aparecer {
+
+            from {
+
+                opacity: 0;
+
+                transform: translateY(25px);
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform: translateY(0);
+            }
+        }
+
 
         @keyframes latido {
 
@@ -426,7 +495,6 @@
         ===================================== */
 
         @media (max-width: 500px) {
-
 
             .pantalla {
 
@@ -472,30 +540,35 @@
             }
 
 
+            .mensaje-ups {
+
+                padding: 35px 20px;
+            }
+
+
+            .titulo-ups {
+
+                font-size: 36px;
+            }
+
+
+            .texto-ups {
+
+                font-size: 18px;
+            }
+
+
             #pantalla3 {
 
                 padding: 10px 5px;
             }
 
 
-            .resultado-final {
-
-                padding-top: 5px;
-            }
-
-
-            .imagen-invitacion {
-
-                border-radius: 15px;
-            }
-
-
-            /*
-              La frase permanece en una sola línea.
-              Reducimos la letra para que quepa.
-            */
-
             .gracias {
+
+                /*
+                Mantiene el mensaje en una sola línea
+                */
 
                 font-size: 13px;
 
@@ -521,7 +594,6 @@
 
 <!-- =========================================
      PANTALLA 1
-     NOMBRE
 ========================================= -->
 
 <div
@@ -587,7 +659,6 @@
 
 <!-- =========================================
      PANTALLA 2
-     PREDICCIÓN
 ========================================= -->
 
 <div
@@ -624,6 +695,8 @@
         <div class="opciones">
 
 
+            <!-- BOTÓN NIÑO -->
+
             <button
                 type="button"
                 class="opcion nino"
@@ -639,10 +712,12 @@
             </button>
 
 
+            <!-- BOTÓN NIÑA -->
+
             <button
                 type="button"
                 class="opcion nina"
-                onclick="('Niña')"
+                onclick="votar('Niña')"
             >
 
                 💗
@@ -655,6 +730,56 @@
 
 
         </div>
+
+
+    </div>
+
+
+</div>
+
+
+
+<!-- =========================================
+     PANTALLA UPS
+========================================= -->
+
+<div
+    id="pantallaUps"
+    class="pantalla oculto"
+>
+
+
+    <div class="mensaje-ups">
+
+
+        <div class="icono-ups">
+            😮
+        </div>
+
+
+        <h1 class="titulo-ups">
+            ¡UPS!
+        </h1>
+
+
+        <p class="texto-ups">
+            Parece que fallaste esta vez...
+        </p>
+
+
+        <p class="texto-ups">
+            💗 Pero espera...
+        </p>
+
+
+        <p class="texto-ups">
+            La sorpresa está por llegar ✨
+        </p>
+
+
+        <p class="espera">
+            Prepárate para descubrir la sorpresa...
+        </p>
 
 
     </div>
@@ -678,9 +803,7 @@
     <div class="resultado-final">
 
 
-        <!-- =================================
-             IMAGEN
-        ================================== -->
+        <!-- IMAGEN -->
 
         <img
             src="invitacion.jpeg"
@@ -689,9 +812,7 @@
         >
 
 
-        <!-- =================================
-             MENSAJE DEBAJO
-        ================================== -->
+        <!-- MENSAJE -->
 
         <div class="mensaje-final">
 
@@ -703,10 +824,11 @@
             </p>
 
 
-            <div
-        id="sorpresa"
-        class="sorpresa"
-    ></div>
+            <div class="sorpresa">
+
+                🎀 ¡ES NIÑA! 🎀
+
+            </div>
 
 
         </div>
@@ -723,7 +845,7 @@
 
 
     /* ======================================
-       VARIABLE DEL NOMBRE
+       NOMBRE DEL INVITADO
     ====================================== */
 
     let nombreInvitado = "";
@@ -745,10 +867,6 @@
             campoNombre.value.trim();
 
 
-        /*
-        Verificar nombre
-        */
-
         if (nombreInvitado === "") {
 
             alert(
@@ -762,7 +880,7 @@
 
 
         /*
-        Saludo
+        Mostrar saludo
         */
 
         document
@@ -797,46 +915,94 @@
 
 
     /* ======================================
-       PANTALLA 2 → PANTALLA 3
+       VOTACIÓN
     ====================================== */
 
     function votar(prediccion) {
 
 
-        const mensaje = document.getElementById("sorpresa");
+        /*
+        SI ELIGIÓ NIÑO
+        */
 
-    /*
-    Si eligió NIÑO
-    */
+        if (prediccion === "Niño") {
 
-    if (prediccion === "Niño") {
 
-        mensaje.innerHTML =
-            "😄 ¡UPS! CASI...<br>¡ES NIÑA! 🎀";
+            /*
+            Ocultar pantalla 2
+            */
+
+            document
+                .getElementById("pantalla2")
+                .classList
+                .add("oculto");
+
+
+            /*
+            Mostrar pantalla UPS
+            */
+
+            document
+                .getElementById("pantallaUps")
+                .classList
+                .remove("oculto");
+
+
+            /*
+            Después de 6 segundos
+            mostrar la invitación
+            */
+
+            setTimeout(
+                mostrarInvitacion,
+                6000
+            );
+
+
+        }
+
+
+        /*
+        SI ELIGIÓ NIÑA
+        */
+
+        else {
+
+
+            mostrarInvitacion();
+
+        }
 
     }
 
-    /*
-    Si eligió NIÑA
-    */
-
-    else {
-
-        mensaje.innerHTML =
-            "🎀 ¡ES NIÑA! 🎀";
-
-    }
 
 
-    /*
-    Mensaje con el nombre
-    */
+    /* ======================================
+       MOSTRAR INVITACIÓN
+    ====================================== */
 
-    document
-        .getElementById("gracias")
-        .textContent =
-            "Tu predicción quedó registrada. Gracias, " +
-            nombreInvitado;
+    function mostrarInvitacion() {
+
+
+        /*
+        Mensaje con el nombre
+        */
+
+        document
+            .getElementById("gracias")
+            .textContent =
+                "Tu predicción quedó registrada. Gracias, " +
+                nombreInvitado;
+
+
+        /*
+        Ocultar pantalla UPS
+        */
+
+        document
+            .getElementById("pantallaUps")
+            .classList
+            .add("oculto");
 
 
         /*
@@ -850,7 +1016,7 @@
 
 
         /*
-        Mostrar pantalla 3
+        Mostrar invitación
         */
 
         document
@@ -859,6 +1025,7 @@
             .remove("oculto");
 
     }
+
 
 </script>
 
