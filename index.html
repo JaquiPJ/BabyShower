@@ -1,1 +1,363 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Baby Shower 💛</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: "Trebuchet MS", Arial, sans-serif;
+            background: #fff8cf;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            color: #5c5140;
+        }
+
+        .contenedor {
+            width: 100%;
+            max-width: 500px;
+            min-height: 100vh;
+            padding: 30px 22px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .pantalla {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.92);
+            border-radius: 30px;
+            padding: 40px 25px;
+            box-shadow: 0 10px 35px rgba(180, 150, 70, 0.20);
+            animation: aparecer 0.8s ease;
+        }
+
+        .oculto {
+            display: none;
+        }
+
+        .emoji {
+            font-size: 65px;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-size: 38px;
+            margin: 5px 0 15px;
+            color: #d5aa27;
+        }
+
+        h2 {
+            font-size: 28px;
+            margin: 10px 0 20px;
+        }
+
+        p {
+            font-size: 19px;
+            line-height: 1.5;
+        }
+
+        .subtitulo {
+            color: #8a7b5c;
+        }
+
+        input {
+            width: 100%;
+            padding: 17px;
+            border: 2px solid #ead98b;
+            border-radius: 15px;
+            font-size: 18px;
+            text-align: center;
+            outline: none;
+            margin: 15px 0 20px;
+        }
+
+        input:focus {
+            border-color: #d5aa27;
+        }
+
+        .boton {
+            border: none;
+            border-radius: 18px;
+            padding: 17px 25px;
+            font-size: 19px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            transition: transform 0.2s, box-shadow 0.2s;
+            margin-top: 10px;
+        }
+
+        .boton:hover {
+            transform: scale(1.03);
+        }
+
+        .continuar {
+            background: #f1cf55;
+            color: white;
+            box-shadow: 0 5px 15px rgba(210, 170, 40, 0.3);
+        }
+
+        .opciones {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .opcion {
+            flex: 1;
+            padding: 25px 10px;
+            border: none;
+            border-radius: 20px;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .opcion:hover {
+            transform: translateY(-5px);
+        }
+
+        .nino {
+            background: #bde3ff;
+            color: #39729a;
+        }
+
+        .nina {
+            background: #ffd0df;
+            color: #a94e70;
+        }
+
+        .resultado {
+            animation: zoom 0.8s ease;
+        }
+
+        .resultado h1 {
+            font-size: 48px;
+            color: #e4b82f;
+        }
+
+        .gran-nina {
+            color: #e85c8b !important;
+            font-size: 55px !important;
+        }
+
+        .gran-nino {
+            color: #4c9bd1 !important;
+            font-size: 55px !important;
+        }
+
+        .confeti {
+            font-size: 35px;
+            letter-spacing: 5px;
+            margin: 20px 0;
+        }
+
+        @keyframes aparecer {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes zoom {
+            0% {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+
+            70% {
+                transform: scale(1.08);
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @media (max-width: 400px) {
+            h1 {
+                font-size: 32px;
+            }
+
+            h2 {
+                font-size: 24px;
+            }
+
+            .opcion {
+                font-size: 17px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="contenedor">
+
+    <!-- PANTALLA 1 -->
+    <div class="pantalla" id="pantallaNombre">
+
+        <div class="emoji">💛</div>
+
+        <h1>Baby Shower</h1>
+
+        <p class="subtitulo">
+            Tenemos una pregunta muy importante...
+        </p>
+
+        <h2>¿Qué crees que es? 👶</h2>
+
+        <p>
+            Primero dinos tu nombre
+        </p>
+
+        <input
+            type="text"
+            id="nombre"
+            placeholder="Escribe tu nombre"
+            maxlength="50"
+        >
+
+        <button class="boton continuar" onclick="continuar()">
+            CONTINUAR ✨
+        </button>
+
+    </div>
+
+
+    <!-- PANTALLA 2 -->
+    <div class="pantalla oculto" id="pantallaPrediccion">
+
+        <div class="emoji">👶</div>
+
+        <h2 id="saludo"></h2>
+
+        <p>
+            Ahora sí...
+        </p>
+
+        <h2>¿Qué crees que es?</h2>
+
+        <div class="opciones">
+
+            <button class="opcion nino" onclick="votar('Niño')">
+                💙<br>
+                NIÑO
+            </button>
+
+            <button class="opcion nina" onclick="votar('Niña')">
+                💗<br>
+                NIÑA
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- PANTALLA 3 -->
+    <div class="pantalla oculto resultado" id="pantallaResultado">
+
+        <div class="confeti">
+            🎉 ✨ 🎀 ✨ 🎉
+        </div>
+
+        <h2 id="gracias"></h2>
+
+        <p>
+            Tu predicción fue:
+        </p>
+
+        <h1 id="prediccion"></h1>
+
+        <div class="confeti">
+            👶 💛 👶 💛 👶
+        </div>
+
+        <p>
+            Y ahora sí...
+        </p>
+
+        <h2>La gran sorpresa es...</h2>
+
+        <h1 class="gran-nina">
+            ¡ES NIÑA! 🎀
+        </h1>
+
+        <div class="confeti">
+            💗 🌸 🎀 🌸 💗
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+    let nombreInvitado = "";
+
+    function continuar() {
+
+        const campo = document.getElementById("nombre");
+
+        nombreInvitado = campo.value.trim();
+
+        if (nombreInvitado === "") {
+            alert("Por favor escribe tu nombre 😊");
+            return;
+        }
+
+        document.getElementById("saludo").innerText =
+            "¡Hola, " + nombreInvitado + "! 💛";
+
+        document.getElementById("pantallaNombre")
+            .classList.add("oculto");
+
+        document.getElementById("pantallaPrediccion")
+            .classList.remove("oculto");
+    }
+
+
+    function votar(prediccion) {
+
+        document.getElementById("gracias").innerText =
+            "¡Gracias, " + nombreInvitado + "! 🎉";
+
+        document.getElementById("prediccion").innerText =
+            prediccion === "Niña"
+                ? "💗 NIÑA"
+                : "💙 NIÑO";
+
+        document.getElementById("pantallaPrediccion")
+            .classList.add("oculto");
+
+        document.getElementById("pantallaResultado")
+            .classList.remove("oculto");
+    }
+
+</script>
+
+</body>
+</html>
 
